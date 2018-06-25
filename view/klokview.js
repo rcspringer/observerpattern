@@ -1,21 +1,20 @@
 class KlokView extends Observer {
   constructor(model) {
     super(model);
-    console.log(this);
     this.model.addObserver(this)
     
   }
 
   update() {
     super.update();
-    this.tekenTime();
+    this.drawClock(this.model.getHours(), this.model.getMinutes(), this.model.getSeconds());
   }
   
-  tekenTime() {
+  drawClock(hours, minutes, seconds) {
     document.getElementById("digitalTime").innerHTML = 
-      this.zeroify(this.model.getHours()) + 
-      ":" + this.zeroify(this.model.getMinutes()) + 
-      ":" + this.zeroify(this.model.getSeconds());
+      this.zeroify(hours) + 
+      ":" + this.zeroify(minutes) + 
+      ":" + this.zeroify(seconds);
   }
 
   zeroify(getal) {
