@@ -5,21 +5,16 @@ class AnalogClockView extends Observer {
     this.model.addObserver(this);
     this.canvas = document.getElementById("canvas");
     this.ctx = this.canvas.getContext("2d");
-    this.radius = canvas.height / 2;
+    this.radius = canvas.width / 2;
     this.ctx.translate(this.radius, this.radius);
     this.radius *= 0.9;
   }
 
   update() {
     super.update();
-    console.log("Update");
-    console.log(this);
     var hour = this.model.getHours();
     var minute = this.model.getMinutes();
     var second = this.model.getSeconds();
-    console.log(hour);
-    console.log(minute);
-    console.log(second);
     this.drawClock(this.radius, hour, minute, second);
   }
 

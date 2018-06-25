@@ -8,5 +8,3 @@ class Observer {
         console.log("Model is geupdated!");
     }
 }
-
-//module.exports = Observer

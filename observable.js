@@ -23,5 +23,3 @@ class Observable {
         }
     }
 }
-
-//module.exports = Observable;

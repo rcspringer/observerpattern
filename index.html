@@ -9,12 +9,17 @@
         <script src="controller/controller.js"></script>
         <script src="view/klokview.js"></script>
         <script src="start.js"></script>
-
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
     <body>
-        <canvas id="canvas" width="640" height="460"></canvas>
-        <h1 id="digitalTime"></h1>
-        <button id="start">Start</button>
-        <button id="stop">Stop</button>
+        <div id="wrapper">
+            <canvas id="canvas" width="540" height="540"></canvas>
+            <h1 class="elegantshadow" id="digitalTime"></h1>
+            <div class="buttonContainer">
+                <button class="button start" id="start">Start</button>
+                <button class="button stop" id="stop">Stop</button>
+                <div class="clear"></div>
+            </div>
+        </div>
     </body>
 </html>
