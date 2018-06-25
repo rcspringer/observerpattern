@@ -11,18 +11,14 @@ class KlokModel extends Observable {
   }
 
   saveTime() {
-    let saveObject = {
-      time: this.time
-    }
-    let timeArray = JSON.parse(localStorage.getItem(this.id)) || [];
-    timeArray.push(saveObject);
-    localStorage.setItem(this.id, JSON.stringify(timeArray));
+    // Save in de localstorage here ...
+    
+    // ...
     this.notify();
   }
   
   getTimeTable() {
-    let timeArray = JSON.parse(localStorage.getItem(this.id)) || [];
-    return timeArray;
+    // Return een array vanuit de local storage
   }
 
   getHours() {

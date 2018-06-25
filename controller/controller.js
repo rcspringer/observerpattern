@@ -14,10 +14,12 @@ class Controller {
       console.log("Stop");
       this.stopKlok();
     })
+
     document.getElementById("save").addEventListener("click", (e) => {
       console.log("Save");
       this.saveKlok();
     })
+
   }
 
   startKlok() {
@@ -33,7 +35,6 @@ class Controller {
   }
 
   updateKlok() {
-    console.log("Update clock");
     this.klokModel.updateTime();
   }
   

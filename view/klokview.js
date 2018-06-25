@@ -2,7 +2,6 @@ class KlokView extends Observer {
   constructor(model) {
     super(model);
     this.model.addObserver(this)
-    
   }
 
   update() {
@@ -23,5 +22,4 @@ class KlokView extends Observer {
     }
     return getal;
   }
-
 }
