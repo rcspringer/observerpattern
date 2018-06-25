@@ -3,6 +3,7 @@ class Controller {
     this.klokModel = new KlokModel();
     this.klokView = new KlokView(this.klokModel);
     this.klokViewAnalog = new AnalogClockView(this.klokModel);
+    this.timeTableView = new TimeTableView(this.klokModel);
     this.timerID = -1;
 
     document.getElementById("start").addEventListener("click", (e) => {
@@ -13,6 +14,10 @@ class Controller {
       console.log("Stop");
       this.stopKlok();
     })
+    document.getElementById("save").addEventListener("click", (e) => {
+      console.log("Save");
+      this.saveKlok();
+    })
   }
 
   startKlok() {
@@ -21,6 +26,10 @@ class Controller {
 
   stopKlok() {
     clearInterval(this.timerID);
+  }
+
+  saveKlok() {
+    this.klokModel.saveTime();
   }
 
   updateKlok() {
