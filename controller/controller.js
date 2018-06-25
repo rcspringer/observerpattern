@@ -1,9 +1,6 @@
 class Controller {
   constructor() {
     this.klokModel = new KlokModel();
-    this.klokView = new KlokView(this.klokModel);
-    this.klokViewAnalog = new AnalogClockView(this.klokModel);
-    this.timeTableView = new TimeTableView(this.klokModel);
     this.timerID = -1;
 
     document.getElementById("start").addEventListener("click", (e) => {
@@ -13,10 +10,6 @@ class Controller {
     document.getElementById("stop").addEventListener("click", (e) => {
       console.log("Stop");
       this.stopKlok();
-    })
-    document.getElementById("save").addEventListener("click", (e) => {
-      console.log("Save");
-      this.saveKlok();
     })
   }
 
@@ -33,8 +26,8 @@ class Controller {
   }
 
   updateKlok() {
-    console.log("Update clock");
     this.klokModel.updateTime();
+    console.log(this.klokModel.getHours(), this.klokModel.getMinutes(), this.klokModel.getSeconds());
   }
   
 }
