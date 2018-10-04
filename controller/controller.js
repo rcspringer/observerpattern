@@ -1,7 +1,8 @@
 class Controller {
   constructor() {
     this.klokModel = new KlokModel();
-    this.klokView = new KlokView(this.klokModel);
+    this.countDown = new KlokCountDownModel();
+    this.klokView = new KlokView(this.countDown);
     this.klokViewAnalog = new AnalogClockView(this.klokModel);
     this.timeTableView = new TimeTableView(this.klokModel);
     this.timerID = -1;
@@ -35,6 +36,7 @@ class Controller {
   updateKlok() {
     console.log("Update clock");
     this.klokModel.updateTime();
+    this.countDown.updateTime();
   }
   
 }

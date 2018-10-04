@@ -7,11 +7,12 @@ class KlokView extends Observer {
 
   update() {
     super.update();
-    this.drawClock(this.model.getHours(), this.model.getMinutes(), this.model.getSeconds());
+    this.drawClock(this.model.getDays(), this.model.getHours(), this.model.getMinutes(), this.model.getSeconds());
   }
   
-  drawClock(hours, minutes, seconds) {
+  drawClock(days, hours, minutes, seconds) {
     document.getElementById("digitalTime").innerHTML = 
+      this.zeroify(days) + "dagen " +
       this.zeroify(hours) + 
       ":" + this.zeroify(minutes) + 
       ":" + this.zeroify(seconds);
