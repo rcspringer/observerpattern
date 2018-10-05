@@ -3,9 +3,21 @@
 }
 
 header {
+  position: relative;
   height: 50px;
   width: 100%;
   background-color: #83c9eb;
+  z-index: 10;
+}
+#headerWrapper {
+  width: 20%;
+  min-width: 100px;
+  margin: auto;
+}
+
+#kpeLogo {
+  margin-top: 10%;
+  width: 100%;
 }
 
 body {
