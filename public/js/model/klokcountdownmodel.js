@@ -1,14 +1,20 @@
 class KlokCountDownModel extends Observable {
-  constructor() {
+  constructor(stringDate) {
     super();
     this.time = new Date();
-    this.id = "countDownKlok"
+    this.countDownDate = new Date(stringDate);
+    this.id = "countDownKlok";
+    this.visibility = false;
+  }
+
+  setVisibility(value) {
+    this.visibility = value;
+    this.notify();
   }
 
   updateTime() {
-    let countDownDate = new Date("01-01-2030");
     let now = new Date();
-    this.distance = countDownDate - now;
+    this.distance = this.countDownDate - now;
     this.notify();
   }
 
